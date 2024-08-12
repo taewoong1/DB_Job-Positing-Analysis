@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "URL Fetcher",
+  "description": "Fetches URL and sends it to the server",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "<all_urls>"
+  ],
+  "host_permissions": [
+    "http://localhost:5000/*"
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
